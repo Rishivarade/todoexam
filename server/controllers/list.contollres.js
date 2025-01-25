@@ -38,7 +38,7 @@ const editTodo = async (req, res) => {
     const { listId } = req.params
     const { title } = req.body
     try {
-        const isIdExist = await Listmodel.findById({ listId })
+        const isIdExist = await Listmodel.findById( listId )
         if (!isIdExist) {
             res.status(404).json({ message: "List not found" })
         }
